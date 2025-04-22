@@ -101,7 +101,7 @@ class MyFooter extends HTMLElement {
 
             <div  class="footer_right">
               <section>
-                <form action="mailto:daiztam21@gmail.com" method="post" enctype="text/plain">
+                <form action="https://formsubmit.co/daiztam21@gmail.com" method="POST" enctype="text/plain">
                 <fieldset>
                     <label>
                       First Name*
