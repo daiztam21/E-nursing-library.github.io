@@ -22,7 +22,7 @@ class MyHeader extends HTMLElement {
         <div class="wrapper">
           <div class="header_con">
             <div class="main_logo">
-              <a href="./"><figure><img src="images/logo.png" alt=""/></figure></a>
+              <a href="./"><figure><img src="images/logo.PNG" alt=""/></figure></a>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -48,7 +48,7 @@ class MyHeader extends HTMLElement {
         <div class="toggle_right_nav">
           <nav class="page_nav">
             <div class="menu_slide_right">
-              <a href="<?php //echo get_home_url(); ?>" class="logo_slide_right"><figure><img src="images/logo.png" alt="<?php //echo get_bloginfo('name');?>"/></figure></a>
+              <a href="<?php //echo get_home_url(); ?>" class="logo_slide_right"><figure><img src="images/logo.PNG" alt="<?php //echo get_bloginfo('name');?>"/></figure></a>
               <div class="toggle_holder">
                 <div class="hamburger hamburger--spin-r">
                   <div class="hamburger-box">
@@ -91,7 +91,7 @@ class MyFooter extends HTMLElement {
               <div class="footer_left">
               <section>
                 <figure>
-                  <img src="images/logo.png" alt="">
+                  <img src="images/logo.PNG" alt="">
                 </figure>
                 <p>A digital guide designed to help nursing students
                 and professionals learn, review, and master
@@ -124,12 +124,7 @@ class MyFooter extends HTMLElement {
                 </form>
               </section>
             </div>
-
-              <!-- <div class="footer_logo">
-                <a href="<?php //echo get_home_url(); ?>"><figure><img src="images/footer-logo.png" alt="<?php //echo get_bloginfo('name');?>"></figure></a>
-              </div> -->
             </div>
-
             <div class="footer_btm">
 
             </div>
