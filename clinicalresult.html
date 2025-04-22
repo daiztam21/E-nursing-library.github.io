@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<script type="text/javascript" src="js/main.js"></script>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+
+	<title>E-NURSING LIBRARY</title>
+
+
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/hamburgers.min.css">
+	<link rel="stylesheet" href="css/media.css">
+	<link rel="stylesheet" href="css/rslides.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="icon" type="image/ico" href="images/favicon.png"/>
+</head>
+
+  <body>
+    <!--Header and Main Menu-->
+		<my-header></my-header>
+		<!--Header and Main Menu-->
+
+    <!-- Main -->
+    	<div id="main_area">
+      	<div class="wrapper">
+    			<div class="main_con">
+            <div class="main_info">
+								  <h2>CLINICAL CALCULATOR</h2>
+            </div>
+          </main>
+              <div class="main_calculator">
+                <div class="main_btn">
+                  <ul>
+                    <li><button class="dot" onclick="currentDiv(1)">ADULT DRUG DOSAGE CALCULATION</button></li>
+                    <li><button class="dot" onclick="currentDiv(2)">PEDIATRIC FORMULAS CALCULATION</button></li>
+                    <li><button class="dot" onclick="currentDiv(3)">INTRAVENOUS (IV) CALCULATIONS</button></li>
+                  </ul>
+                </div>
+
+              <div class="main_box main_box1 mySlides">
+                <h2>ADULT DRUG DOSAGE CALCULATION</h2>
+                  <form id="adultForm" onsubmit="return calcAdult()">
+                    <input type="number" id="num1" placeholder="Ordered Dose">
+                    <input type="number" id="num2" placeholder="Stock Available">
+                    <input type="number" id="num3" placeholder="Volume">
+                    <button type="submit" id="submitBtn">Calculate</button>
+                  </form>
+                  <p>Administer <span id="output">0</span> ML</p>
+              </div>
+
+              <div class="main_box2 mySlides main_box">
+                <h2>PEDIATRIC FORMULAS CALCULATION</h2>
+                  <form id="pediaForm" onsubmit="return calcPedia()">
+                    <select id="age">
+                      <option value="infants">For infants less than 1 year</option>
+                      <option value="youngs">Ages 1-12 years</option>
+                    </select>
+                    <input type="number" id="P1" placeholder="Age">
+                    <input type="number" id="P2" placeholder="Average Adults Dose">
+                    <button type="submit" id="submitBtn">Calculate</button>
+                  </form>
+                  <p id="output_pedia">0</p>
+
+                  <section class="main_box2_sec1">
+                    <h2><span>Clark’s Rule (Weight-Based Dosing)</span></h2>
+                       <form id="pediaClarkForm" onsubmit="return calcPediaClark()">
+                         <input type="number" id="PC1" placeholder="Child’s weight">
+                         <input type="number" id="PC2" placeholder="Average adult dose">
+                         <button type="submit" id="submitBtn">Calculate</button>
+                       </form>
+                       <p id="output_pediaClark">0</p>
+                  </section>
+              </div>
+
+              <div class="main_box3 mySlides main_box">
+                <h2>INTRAVENOUS (IV) CALCULATIONS</h2>
+
+                <section class="main_box3_sec1">
+                  <h2>Flow Rate (gtt/min)</h2>
+                  <form id="adultForm" onsubmit="return calcIntra1()">
+                    <input type="number" id="FlowRate1" placeholder="Drop factor">
+                    <input type="number" id="FlowRate2" placeholder="Volume">
+                    <input type="number" id="FlowRate3" placeholder="Time (in Hours)">
+                    <button type="submit" id="submitBtn">Calculate</button>
+                  </form>
+                  <p id="output_FlowRate">0</p>
+                </section>
+
+                <section class="main_box3_sec2">
+                  <h2>mL/hr Calculation (for IV Infusion Pumps)</h2>
+                  <form id="adultForm" onsubmit="return calcIntra2()">
+                    <input type="number" id="Infus1" placeholder="Volume">
+                    <input type="number" id="Infus2" placeholder="Time (in Hours)">
+                    <button type="submit" id="submitBtn">Calculate</button>
+                  </form>
+                  <p id="output_InfusePumps">0</p>
+                </section>
+
+                <section class="main_box3_sec3">
+                  <h2>Gtts/min</h2>
+                  <form id="adultForm" onsubmit="return calcIntra3()">
+                    <input type="number" id="Gtts1" placeholder="Volume">
+                    <input type="number" id="Gtts2" placeholder="Drop factor (gtt/mL)">
+                    <input type="number" id="Gtts3" placeholder="Time (in Hours)">
+                    <button type="submit" id="submitBtn">Calculate</button>
+                  </form>
+                  <p id="output_Gtts">0</p>
+                </section>
+
+                <section class="main_box3_sec4">
+                  <h2>Time to Last (Hrs)</h2>
+                  <form id="adultForm" onsubmit="return calcIntra4()">
+                    <input type="number" id="TL1" placeholder="Volume">
+                    <input type="number" id="TL2" placeholder="Drop factor">
+                    <input type="number" id="TL3" placeholder="Flow rate (gtt/min)">
+                    <button type="submit" id="submitBtn">Calculate</button>
+                  </form>
+                  <p id="output_TimeLast">0</p>
+                </section>
+
+              </div>
+
+             </div>
+    	      </div>
+    			</div>
+    			<div class="clearfix"></div>
+      	</div>
+    	</div>
+    <!-- End Main -->
+
+		<!--Footer-->
+		<my-footer></my-footer>
+		<!--Footer-->
+
+		<span class="back_top"></span>
+
+	  </div> <!-- End Clearfix -->
+	  </div> <!-- End Protect Me -->
+
+	  <!--
+	  Solved HTML5 & CSS IE Issues
+	  -->
+	  <script src="js/modernizr-custom-v2.7.1.min.js"></script>
+	  <script src="js/jquery-2.1.1.min.js"></script>
+	  <!-- <script src="js/jquery.easing.1.3.js"></script>
+	  <script src="js/jquery.skitter.min.js"></script> -->
+		<!-- <script src="js/css3-animate-it.min.js"></script> -->
+
+	  <!--
+	  Solved Psuedo Elements IE Issues
+	  -->
+	  <script src="js/calcheight.min.js"></script>
+	  <script src="js/responsiveslides.min.js"></script>
+	  <script src="js/wow.min.js"></script>
+	  <script src="js/plugins.min.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
