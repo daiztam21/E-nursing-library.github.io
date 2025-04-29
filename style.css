@@ -224,9 +224,17 @@ header{background: #fff;}
 		.main_btn button:active{background-color: #000;}
 		#submitBtn{font-weight: bold;background-color: #1e3765;color: #fff;border:none; border-radius:10px; padding:15px;min-height:30px; min-width: 120px;}
 		#submitBtn:hover{color: #296a8a;background: #e6edf3; border: 1px solid #296a8a;}
+		.main_box2_sec1 {padding-top: 30px;}
 
 		.main_box3 section {margin: 30px 0;border-bottom: 1px dashed #000;padding: 20px;}
 		.main_box3 section h2 {font-size: 20px;font-weight: bold;};
+
+		.main_box3_sec1 .main_box3_sec2 .main_box3_sec3 .main_box3_sec4 {}
+
+		/*Mathematical Equation*/
+		.formula math{padding-bottom: 10px}
+		.formula h3{ max-width: 300px;display: block;margin: 0 auto;font-style: italic; padding: 20px;}
+		.formula h3 span{ display: block;font-style: normal;font-size: 12px; margin: 24px 0 15px 0;font-weight: bold;border-bottom: 1px solid #000;}
 
 		main p{margin-bottom:15px;}
 		main ol{padding-left: 20px; margin-bottom: 15px;}
