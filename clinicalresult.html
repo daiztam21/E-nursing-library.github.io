@@ -42,18 +42,76 @@
                 </div>
 
               <div class="main_box main_box1 mySlides">
-                <h2>ADULT DRUG DOSAGE CALCULATION</h2>
+								<h2>ADULT DRUG DOSAGE CALCULATION</h2>
+									<div class="formula">Formula:
+										<h3><span>D = Ordered Dose <br>
+										S = Stock available <br>
+										Volume = Volume (dilution):</span>
+										<math xmlns="http://www.w3.org/1998/Math/MathML">
+										  <mrow>
+										    <mo>(</mo>
+										    <mfrac>
+										      <mi>D</mi>
+										      <mi>S</mi>
+										    </mfrac>
+										    <mo>)</mo>
+										    <mo>&#x00D7;</mo>
+										    <mi>Volume</mi>
+										    <mo>=</mo>
+										    <mtext>Amount to Administer</mtext>
+										  </mrow>
+										</math>
+									</h3>
+								</div>
+
                   <form id="adultForm" onsubmit="return calcAdult()">
                     <input type="number" id="num1" placeholder="Ordered Dose">
                     <input type="number" id="num2" placeholder="Stock Available">
                     <input type="number" id="num3" placeholder="Volume">
                     <button type="submit" id="submitBtn">Calculate</button>
                   </form>
-                  <p>Administer <span id="output">0</span> ML</p>
+                  <p>Administer <span id="output">0</span> mL</p>
               </div>
 
               <div class="main_box2 mySlides main_box">
                 <h2>PEDIATRIC FORMULAS CALCULATION</h2>
+
+								<div class="formula">Formula:
+									<h3>
+										<span>Fried’s Rule (For infants): </span>
+									<math xmlns="http://www.w3.org/1998/Math/MathML">
+									  <mrow>
+									    <mo>(</mo>
+									    <mfrac>
+									      <mtext>Infant's age in months</mtext>
+									      <mtext>150 months</mtext>
+									    </mfrac>
+									    <mo>)</mo>
+									    <mo>&#x00D7;</mo>
+									    <mtext>Average Adult Dose</mtext>
+									  </mrow>
+									</math>
+
+									<span>Young’s Rule (Ages 1-12 years): </span>
+									<math xmlns="http://www.w3.org/1998/Math/MathML">
+										<mrow>
+											<mo>(</mo>
+											<mfrac>
+												<mtext>Child's age in years</mtext>
+												<mrow>
+													<mtext>Child's age in years</mtext>
+													<mo>+</mo>
+													<mn>12</mn>
+												</mrow>
+											</mfrac>
+											<mo>)</mo>
+											<mo>&#x00D7;</mo>
+											<mtext>Average Adult Dose</mtext>
+										</mrow>
+									</math>
+								</h3>
+							</div>
+
                   <form id="pediaForm" onsubmit="return calcPedia()">
                     <select id="age">
                       <option value="infants">For infants less than 1 year</option>
@@ -63,16 +121,34 @@
                     <input type="number" id="P2" placeholder="Average Adults Dose">
                     <button type="submit" id="submitBtn">Calculate</button>
                   </form>
-                  <p id="output_pedia">0</p>
+									<p>Administer <span id="output_pedia">0</span> mg</p>
 
                   <section class="main_box2_sec1">
                     <h2><span>Clark’s Rule (Weight-Based Dosing)</span></h2>
+
+										<div class="formula">Formula:
+											<h3>
+												<math xmlns="http://www.w3.org/1998/Math/MathML">
+												  <mrow>
+												    <mo>(</mo>
+												    <mfrac>
+												      <mtext>Weight of child (lbs)</mtext>
+												      <mtext>150 lbs</mtext>
+												    </mfrac>
+												    <mo>)</mo>
+												    <mo>&#x00D7;</mo>
+												    <mtext>Average Adult Dose</mtext>
+												  </mrow>
+												</math>
+										</h3>
+									</div>
+
                        <form id="pediaClarkForm" onsubmit="return calcPediaClark()">
                          <input type="number" id="PC1" placeholder="Child’s weight">
                          <input type="number" id="PC2" placeholder="Average adult dose">
                          <button type="submit" id="submitBtn">Calculate</button>
                        </form>
-                       <p id="output_pediaClark">0</p>
+											 <p>Administer <span id="output_pediaClark">0</span> mg</p>
                   </section>
               </div>
 
@@ -81,45 +157,120 @@
 
                 <section class="main_box3_sec1">
                   <h2>Flow Rate (gtt/min)</h2>
+
+									<div class="formula">
+										<h3>
+											<span>DF = Drop factor <br>
+											V = Volume <br>
+											T = Time</span>
+											<math xmlns="http://www.w3.org/1998/Math/MathML">
+											  <mrow>
+											    <mi>FR</mi>
+											    <mo>=</mo>
+											    <mfrac>
+											      <mrow>
+											        <mi>DF</mi>
+											        <mo>&#x00D7;</mo>
+											        <mi>V</mi>
+											      </mrow>
+											      <mi>T</mi>
+											    </mfrac>
+											  </mrow>
+											</math>
+									</h3>
+								</div>
+
                   <form id="adultForm" onsubmit="return calcIntra1()">
                     <input type="number" id="FlowRate1" placeholder="Drop factor">
                     <input type="number" id="FlowRate2" placeholder="Volume">
                     <input type="number" id="FlowRate3" placeholder="Time (in Hours)">
                     <button type="submit" id="submitBtn">Calculate</button>
                   </form>
-                  <p id="output_FlowRate">0</p>
+									<p><span id="output_FlowRate">0</span> gtt/min (rounded)</p>
                 </section>
 
                 <section class="main_box3_sec2">
                   <h2>mL/hr Calculation (for IV Infusion Pumps)</h2>
+									<div class="formula">
+										<h3>
+											<math xmlns="http://www.w3.org/1998/Math/MathML">
+											  <mfrac>
+											    <mtext>Volume in mL</mtext>
+											    <mtext>No. of hours to consume</mtext>
+											  </mfrac>
+											</math>
+									</h3>
+								</div>
                   <form id="adultForm" onsubmit="return calcIntra2()">
                     <input type="number" id="Infus1" placeholder="Volume">
                     <input type="number" id="Infus2" placeholder="Time (in Hours)">
                     <button type="submit" id="submitBtn">Calculate</button>
                   </form>
-                  <p id="output_InfusePumps">0</p>
+									<p>Infuse <span id="output_InfusePumps">0</span> mL/hr using IV pump</p>
                 </section>
 
                 <section class="main_box3_sec3">
                   <h2>Gtts/min</h2>
+									<div class="formula">
+										<h3>
+											<span>V = Voume<br>
+											DF = Drop Factor <br>
+											T = Time</span>
+											<math xmlns="http://www.w3.org/1998/Math/MathML">
+											  <mfrac>
+											    <mrow>
+											      <mtext>Volume in mL</mtext>
+											      <mo>&nbsp; &#x00D7; &nbsp;</mo>
+											      <mtext>Drop Factor</mtext>
+											    </mrow>
+											    <mrow>
+											      <mtext>No. of hours</mtext>
+											      <mo>&nbsp; &#x00D7; &nbsp;</mo>
+											      <mn>60</mn>
+											    </mrow>
+											  </mfrac>
+											</math>
+									</h3>
+								</div>
                   <form id="adultForm" onsubmit="return calcIntra3()">
                     <input type="number" id="Gtts1" placeholder="Volume">
                     <input type="number" id="Gtts2" placeholder="Drop factor (gtt/mL)">
                     <input type="number" id="Gtts3" placeholder="Time (in Hours)">
                     <button type="submit" id="submitBtn">Calculate</button>
                   </form>
-                  <p id="output_Gtts">0</p>
+									<p><span id="output_Gtts">0</span> gtt/min</p>
                 </section>
 
                 <section class="main_box3_sec4">
                   <h2>Time to Last (Hrs)</h2>
+									<div class="formula">
+										<h3>
+											<span>V = Voume<br>
+											DF = Drop Factor <br>
+											FR = Flow Rate</span>
+											<math xmlns="http://www.w3.org/1998/Math/MathML">
+											  <mfrac>
+											    <mrow>
+											      <mtext>Volume in cc</mtext>
+											      <mo>&nbsp; &#x00D7; &nbsp;</mo>
+											      <mtext>Drop Factor</mtext>
+											    </mrow>
+											    <mrow>
+											      <mtext>gtt/min</mtext>
+											      <mo>&nbsp; &#x00D7; &nbsp;</mo>
+											      <mn>60</mn>
+											    </mrow>
+											  </mfrac>
+											</math>
+									</h3>
+								</div>
                   <form id="adultForm" onsubmit="return calcIntra4()">
                     <input type="number" id="TL1" placeholder="Volume">
                     <input type="number" id="TL2" placeholder="Drop factor">
                     <input type="number" id="TL3" placeholder="Flow rate (gtt/min)">
                     <button type="submit" id="submitBtn">Calculate</button>
                   </form>
-                  <p id="output_TimeLast">0</p>
+									<p>Lasts <span id="output_TimeLast">0</span> hour(s)</p>
                 </section>
 
               </div>
